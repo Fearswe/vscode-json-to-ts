@@ -1,9 +1,8 @@
-import { ViewColumn, window } from "vscode";
-import * as copyPaste from "copy-paste";
+import { ViewColumn, window, env } from "vscode";
 
 export function getClipboardText() {
   try {
-    return Promise.resolve(copyPaste.paste());
+    return Promise.resolve(env.clipboard.readText());
   } catch (error) {
     return Promise.reject(error);
   }
