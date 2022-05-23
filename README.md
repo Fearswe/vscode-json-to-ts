@@ -1,10 +1,6 @@
-![From clipboard](https://image.ibb.co/fTb60k/icon.png)
-
 # JSON to TS
 
 ### Convert JSON object to typescript interfaces
-
-### [Try it Online](http://www.jsontots.com)
 
 ## Features
 
@@ -19,6 +15,8 @@
 #### Optional quotes
 
 ![Optional quotes](./images/optional-quotes.gif)
+
+#### Now without sending anything to analytics
 
 ## Converter
 

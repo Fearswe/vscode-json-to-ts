@@ -11,13 +11,7 @@ import {
   getSelectedText,
   getViewColumn,
   validateLength,
-  logEvent,
-  getUserId
 } from "./lib";
-import * as UniversalAnalytics from "universal-analytics";
-
-const UA: UniversalAnalytics = require("universal-analytics");
-const visitor = UA("UA-97872528-2", getUserId());
 
 export function activate(context: ExtensionContext) {
   context.subscriptions.push(
@@ -33,7 +27,6 @@ function transformFromSelection() {
   const tmpFileUri = Uri.file(tmpFilePath);
 
   getSelectedText()
-    .then(logEvent(visitor, "Selection"))
     .then(validateLength)
     .then(parseJson)
     .then(json => {
@@ -50,7 +43,6 @@ function transformFromSelection() {
 
 function transformFromClipboard() {
   getClipboardText()
-    .then(logEvent(visitor, "Clipboard"))
     .then(validateLength)
     .then(parseJson)
     .then(json => {
